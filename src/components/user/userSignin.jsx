@@ -21,6 +21,7 @@ const UserSignin = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-2 rounded-md border p-6">
+          <h1 className='flex justify-center text-blue-700 text-5xl pb-3'>User Login Page</h1>
           <input
             {...register("email")}
             type="email"

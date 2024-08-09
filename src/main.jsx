@@ -1,19 +1,11 @@
-
 import App from './App.jsx'
 import './index.css'
-import UserSignup from './components/user/userSignup.jsx';
-import UserSignin from './components/user/userSignin.jsx';
-// import HomeLayout from './layouts/HomeLayout.jsx';
-
-
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import "./index.css";
+import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import HomeLayout from './layouts/HomeLayout.jsx';
+import SignupPage from './pages/user/SignupPage.jsx';
+import LoginPage from './pages/user/LoginPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,11 +13,11 @@ const router = createBrowserRouter([
     children:[
       {
         path: "/usersignup",
-        element: <UserSignup/>,
+        element: <SignupPage/>,
       },
       {
         path: "/usersignin",
-        element: <UserSignin/>,
+        element: <LoginPage/>,
       },  
     ]
   },

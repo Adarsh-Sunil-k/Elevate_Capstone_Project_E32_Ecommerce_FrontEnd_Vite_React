@@ -29,7 +29,10 @@ const UserSignup = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-2 rounded-md border p-6">
+    <>
+    
+    <form onSubmit={handleSubmit(onSubmit)} className="flex justify-center flex-col gap-y-2 rounded-md border p-6">
+    <h1 className='flex justify-center text-green-700 text-5xl pb-3'>User Registration Page</h1>
       <input
         {...register("email")}
         type="email"
@@ -76,9 +79,10 @@ const UserSignup = () => {
       <p className="block justify-center text-center">{errors.phone?.message}</p>
       <input
         type="submit"
-        className="rounded-md bg-blue-500 py-1 text-white cursor-pointer"
+        className="rounded-md bg-green-700 py-1 text-white cursor-pointer"
       />
     </form>
+    </>
   );
 }
 
