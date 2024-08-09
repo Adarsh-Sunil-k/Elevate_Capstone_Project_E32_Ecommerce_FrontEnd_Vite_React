@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
+import axios from 'axios';
 
 
 
@@ -26,8 +27,17 @@ const UserSignup = () => {
     formState: { errors } } = useForm({
     resolver: yupResolver(userSignupSchema),
   });
-  const onSubmit = (data) => console.log(data);
-
+  
+  const  onSubmit = async (data) => {
+    try{
+      const result = await axios.post("http://localhost:4000/api/v1/users/signup",data,
+      {withCredentials:true}
+      );
+    console.log(result.data);
+    }catch(error){
+      console.log(error);
+    }
+  };
   return (
     <>
     
