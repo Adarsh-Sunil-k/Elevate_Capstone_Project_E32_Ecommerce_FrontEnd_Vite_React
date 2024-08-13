@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
+import axios from 'axios';
 
 const userSigninSchema = yup
   .object({
@@ -17,7 +18,21 @@ const UserSignin = () => {
         formState: { errors } } = useForm({
         resolver: yupResolver(userSigninSchema),
     });
-    const onSubmit = (data) => console.log(data);
+
+    const onSubmit = async (data) => {
+      try{
+          const  result = await axios.post("http://localhost:4000/api/v1/users/signin",
+            data,
+            {
+              withCredentials: true
+            }
+          ) ;
+          console.log(result.data);
+      }catch(error){
+        console.log(error.message);
+        
+      }
+    }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-2 rounded-md border p-6">

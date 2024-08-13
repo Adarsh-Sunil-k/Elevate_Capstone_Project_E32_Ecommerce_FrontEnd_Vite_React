@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar.jsx";
-
+import ProductsPage from "./pages/ProductsPage.jsx";
+import Footer from "./components/Footer.jsx";
 function App() {
 
   return (
@@ -13,6 +14,8 @@ function App() {
     </div>
     <div className="flex justify-center"><h2>This Is Your Home Page</h2></div>
     </div>
+    <ProductsPage/>
+    <Footer/>
 
     </>
   )
