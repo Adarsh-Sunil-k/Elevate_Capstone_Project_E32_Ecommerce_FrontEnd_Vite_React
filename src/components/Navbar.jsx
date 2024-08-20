@@ -18,7 +18,7 @@ const Navbar = () => {
         { path: "/payment",
             element: "Payment" },
         { path: "/order",
-            element: "Your Oders" },   
+            element: "YourOders" },   
     ];
 
     return (
